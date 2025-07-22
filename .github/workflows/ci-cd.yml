@@ -50,15 +50,19 @@ jobs:
         
       # Step 7: Build the application
       - name: 🏗️ Build application
-        run: npm run build
+        run: |
+          npm run build
+          # Create a simple build info file
+          echo "Build completed at $(date)" > build-info.txt
         
       # Step 8: Upload build artifacts
       - name: 📤 Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-files
           path: .next/
           retention-days: 1
+          compression-level: 9
 
   # Security and Quality Checks
   security:
