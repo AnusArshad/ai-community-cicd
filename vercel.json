@@ -1,12 +1,6 @@
 {
   "version": 2,
   "name": "ai-community-platform",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
@@ -15,11 +9,6 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
   },
   "functions": {
     "app/api/**/*.js": {
